@@ -1,0 +1,201 @@
+/* =============================
+   GLOBAL THEME – GEMORA
+   ============================= */
+
+:root {
+  --gold: #d4af37;
+  --black: #0a0a0a;
+  --white: #ffffff;
+  --danger: #c0392b;
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Poppins", sans-serif;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: lighten(var(--gold), 10%);
+}
+
+/* =============================
+   NAVIGATION BAR
+   ============================= */
+.navbar {
+  background: var(--black);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.navbar a {
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar a.active {
+  color: var(--gold);
+  font-weight: 600;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 0.3rem;
+}
+
+/* =============================
+   BUTTONS
+   ============================= */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--gold);
+  font-family: var(--font-sans);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0.2rem;
+}
+
+.btn:hover {
+  background: var(--gold);
+  color: var(--black);
+  box-shadow: 0 0 10px var(--gold);
+}
+
+/* Gold-filled button */
+.btn.gold {
+  background: var(--gold);
+  color: var(--black);
+}
+.btn.gold:hover {
+  background: lighten(var(--gold), 10%);
+}
+
+/* Danger button */
+.btn.danger {
+  border: 1px solid var(--danger);
+  color: var(--danger);
+}
+.btn.danger:hover {
+  background: var(--danger);
+  color: var(--white);
+  box-shadow: 0 0 10px var(--danger);
+}
+.btn.soldout {
+  background: transparent;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Small button */
+.btn.small {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.85rem;
+}
+
+/* =============================
+   ADMIN DASHBOARD
+   ============================= */
+.admin-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  width: 220px;
+  background: #111;
+  border-right: 1px solid rgba(255, 215, 0, 0.2);
+  padding: 1rem;
+}
+
+.admin-sidebar .brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--gold);
+}
+
+.admin-content {
+  flex: 1;
+  padding: 2rem;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.admin-content h2 {
+  font-family: var(--font-serif);
+  margin-bottom: 1rem;
+  color: var(--gold);
+}
+
+/* Table styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #151515;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  padding: 0.8rem;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+  text-align: left;
+}
+
+.table th {
+  background: #1c1c1c;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.table tr:hover {
+  background: rgba(255, 215, 0, 0.05);
+}
+
+/* =============================
+   ANIMATIONS
+   ============================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.logo-shimmer {
+  background: linear-gradient(90deg, var(--gold), #fff, var(--gold));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
