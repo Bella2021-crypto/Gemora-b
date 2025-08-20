@@ -1,4 +1,4 @@
-﻿/* =============================
+/* =============================
    GEMORA – ADMIN PANEL STYLING
    ============================= */
 
@@ -7,7 +7,7 @@
 .admin-wrapper {
   display: flex;
   min-height: 100vh;
-  background: #0e0e0e;
+  background: var(--black);
 }
 
 /* Sidebar */
@@ -37,7 +37,7 @@
 }
 .admin-sidebar a:hover {
   background: rgba(212, 175, 55, 0.15);
-  color: var(--gold);
+  color: var(--gold-light); /* ✅ use lighter gold */
 }
 
 /* Content */
@@ -93,4 +93,9 @@
   background: var(--danger);
   color: var(--white);
   box-shadow: 0 0 8px var(--danger);
+}
+
+/* Optional: highlight table rows */
+.table tr:hover {
+  background: rgba(255, 215, 0, 0.05);
 }
