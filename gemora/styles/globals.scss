@@ -1,9 +1,11 @@
 /* =============================
-   GLOBAL THEME � GEMORA
+   GLOBAL THEME – GEMORA
    ============================= */
 
 :root {
   --gold: #d4af37;
+  --gold-light: #f0d86c;   /* lighter gold */
+  --gold-dark: #a88928;    /* darker gold */
   --black: #0a0a0a;
   --white: #ffffff;
   --danger: #c0392b;
@@ -33,7 +35,7 @@ a {
   transition: color 0.3s ease;
 }
 a:hover {
-  color: lighten(var(--gold), 10%);
+  color: var(--gold-light); /* ✅ replaced lighten() */
 }
 
 /* =============================
@@ -89,7 +91,7 @@ a:hover {
   color: var(--black);
 }
 .btn.gold:hover {
-  background: lighten(var(--gold), 10%);
+  background: var(--gold-light); /* ✅ replaced lighten() */
 }
 
 /* Danger button */
@@ -102,10 +104,11 @@ a:hover {
   color: var(--white);
   box-shadow: 0 0 10px var(--danger);
 }
+
 .btn.soldout {
   background: transparent;
-  border: 1px solid #d4af37;
-  color: #d4af37;
+  border: 1px solid var(--gold);
+  color: var(--gold);
   opacity: 0.7;
   cursor: not-allowed;
 }
