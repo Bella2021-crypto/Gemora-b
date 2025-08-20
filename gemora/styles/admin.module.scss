@@ -2,12 +2,11 @@
    GEMORA – ADMIN PANEL STYLING
    ============================= */
 
-@import "./globals.scss"; // Import global theme
-
+/* Scoped Admin Styles */
 .admin-wrapper {
   display: flex;
   min-height: 100vh;
-  background: var(--black);
+  background: #0e0e0e;
 }
 
 /* Sidebar */
@@ -37,7 +36,7 @@
 }
 .admin-sidebar a:hover {
   background: rgba(212, 175, 55, 0.15);
-  color: var(--gold-light); /* ✅ use lighter gold */
+  color: var(--gold);
 }
 
 /* Content */
@@ -79,7 +78,7 @@
   margin-left: 0.5rem;
 }
 
-/* Delete button */
+/* Delete button (scoped) */
 .delete-btn {
   background: transparent;
   border: 1px solid var(--danger);
@@ -95,7 +94,14 @@
   box-shadow: 0 0 8px var(--danger);
 }
 
-/* Optional: highlight table rows */
-.table tr:hover {
-  background: rgba(255, 215, 0, 0.05);
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
