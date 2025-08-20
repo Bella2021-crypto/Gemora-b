@@ -1,6 +1,6 @@
-
 // pages/_app.js
 import "../styles/globals.scss";
+import "../styles/admin.scss";  // ✅ added here
 import { AnimatePresence, motion } from "framer-motion";
 import { CurrencyProvider } from "../context/CurrencyContext";
 
@@ -21,5 +21,6 @@ export default function MyApp({ Component, pageProps, router }) {
     </CurrencyProvider>
   );
 }
+
 
 
