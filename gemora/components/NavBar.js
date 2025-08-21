@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import CurrencySwitcher from "./CurrencySwitcher";
 
 export default function NavBar() {
@@ -6,13 +6,13 @@ export default function NavBar() {
     <nav className="navbar">
       <div className="nav-left">
         <Link href="/" className="logo">
-          GEMORA
+          <span className="logo-text">GEMORA</span>
         </Link>
       </div>
       <div className="nav-right">
-        <Link href="/listing">Products</Link>
-        <Link href="/about">About</Link>
-        <Link href="/contact">Contact</Link>
+        <Link href="/listing" className="nav-link">Products</Link>
+        <Link href="/about" className="nav-link">About</Link>
+        <Link href="/contact" className="nav-link">Contact</Link>
         <CurrencySwitcher />
       </div>
     </nav>
