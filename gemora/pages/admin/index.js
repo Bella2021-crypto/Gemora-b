@@ -36,9 +36,9 @@ export default function AdminPage() {
               <td>$1,200</td>
               <td>12</td>
               <td>
-                <button className="btn small">Edit</button>
-                <button className={`${styles["delete-btn"]} btn small`}>
-                  Delete
+               <button className={styles["admin-btn"]}>Edit</button>
+               <button className={`${styles["admin-btn"]} ${styles["delete-btn"]}`}>
+                Delete
                 </button>
               </td>
             </tr>
@@ -48,3 +48,4 @@ export default function AdminPage() {
     </div>
   );
 }
+
