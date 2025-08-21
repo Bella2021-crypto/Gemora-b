@@ -1,8 +1,14 @@
-﻿// components/CurrencySwitcher.js
+// components/CurrencySwitcher.js
 import { useCurrency } from "../context/CurrencyContext";
 
 export default function CurrencySwitcher() {
   const { currency, setCurrency } = useCurrency();
+
+  const currencies = {
+    USD: { symbol: "$", label: "USD" },
+    NGN: { symbol: "₦", label: "NGN" },
+    EUR: { symbol: "€", label: "EUR" },
+  };
 
   return (
     <select
@@ -10,9 +16,13 @@ export default function CurrencySwitcher() {
       onChange={(e) => setCurrency(e.target.value)}
       className="currency-switcher"
     >
-      <option value="USD">$ USD</option>
-      <option value="NGN">₦ NGN</option>
-      <option value="EUR">€ EUR</option>
+      {Object.entries(currencies).map(([code, { symbol, label }]) => (
+        <option key={code} value={code}>
+          {symbol} {label}
+        </option>
+      ))}
     </select>
   );
 }
+
+
