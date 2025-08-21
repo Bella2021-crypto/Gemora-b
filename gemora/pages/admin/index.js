@@ -15,37 +15,43 @@ export default function AdminPage() {
       </aside>
 
       {/* Content */}
-      <main className={styles["admin-content"]}>
-        <h2>Dashboard</h2>
+     <main className={styles["admin-content"]}>
+     <h2>Dashboard</h2>
 
-        {/* Example Table */}
-        <table className={styles.table}>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Product</th>
-              <th>Price</th>
-              <th>Stock</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>001</td>
-              <td>Luxury Ring</td>
-              <td>$1,200</td>
-              <td>12</td>
-              <td>
-               <button className={styles["admin-btn"]}>Edit</button>
-               <button className={`${styles["admin-btn"]} ${styles["delete-btn"]}`}>
-                Delete
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </main>
+  {/* Add Product Button */}
+  <button className={`${styles["admin-btn"]} ${styles["add-btn"]}`}>
+    + Add New Product
+  </button>
+
+  {/* Example Table */}
+  <table className={styles.table}>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>001</td>
+        <td>Luxury Ring</td>
+        <td>$1,200</td>
+        <td>12</td>
+        <td>
+          <button className={styles["admin-btn"]}>Edit</button>
+          <button className={`${styles["admin-btn"]} ${styles["delete-btn"]}`}>
+            Delete
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    </main>
     </div>
   );
 }
+
 
