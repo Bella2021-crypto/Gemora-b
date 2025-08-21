@@ -118,3 +118,19 @@
     transform: translateY(0);
   }
 }
+
+/* Call-to-action gold button */
+.add-btn {
+  border: 1px solid var(--gold);
+  background: var(--gold);
+  color: var(--black);
+  font-weight: 600;
+
+  &:hover {
+    background: var(--gold-light);
+    border-color: var(--gold-light);
+    box-shadow: 0 0 12px var(--gold);
+  }
+}
+
+
