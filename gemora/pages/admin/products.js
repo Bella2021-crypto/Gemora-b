@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ProductForm from "../../components/ProductForm";
+import { optimizeImage } from "../../lib/cloudinaryHelpers";
 
 export default function AdminProducts() {
   const [products, setProducts] = useState([]);
@@ -57,7 +58,11 @@ export default function AdminProducts() {
       <div className="product-list">
         {products.map((p) => (
           <div key={p._id} className="card">
-            <img src={p.image} alt={p.name} />
+            {/* ✅ Optimized image only */}
+            <img
+              src={optimizeImage(p.image, { width: 400, height: 400 })}
+              alt={p.name}
+            />
             <h3>{p.name}</h3>
             <p className="price">${p.price}</p>
 
@@ -65,7 +70,10 @@ export default function AdminProducts() {
               <button className="btn small" onClick={() => setEditing(p)}>
                 Edit
               </button>
-              <button className="btn danger small" onClick={() => deleteProduct(p._id)}>
+              <button
+                className="btn danger small"
+                onClick={() => deleteProduct(p._id)}
+              >
                 Delete
               </button>
             </div>
