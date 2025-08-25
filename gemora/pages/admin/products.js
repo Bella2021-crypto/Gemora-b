@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import ProductForm from "../../components/ProductForm";
 import { optimizeImage } from "../../lib/cloudinaryHelpers";
+import styles from "../../styles/productGrid.module.scss"; // ✅ new grid styles
 
 export default function AdminProducts() {
   const [products, setProducts] = useState([]);
   const [editing, setEditing] = useState(null);
 
-  // Fetch all products
+  // Fetch products
   useEffect(() => {
     fetch("/api/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
 
-  // Add new product
+  // Add product
   const addProduct = async (product) => {
     const res = await fetch("/api/products", {
       method: "POST",
@@ -55,17 +57,25 @@ export default function AdminProducts() {
         <ProductForm onSubmit={addProduct} />
       )}
 
-      <div className="product-list">
+      <div className={styles.productList}>
         {products.map((p) => (
-          <div key={p._id} className="card">
-            {/* ✅ Optimized image only */}
-            <img
-              src={optimizeImage(p.image, { width: 400, height: 400 })}
-              alt={p.name}
-            />
+          <div key={p._id} className={styles.card}>
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                height: "250px",
+              }}
+            >
+              <Image
+                src={optimizeImage(p.image, { width: 400, height: 400 })}
+                alt={p.name}
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
             <h3>{p.name}</h3>
             <p className="price">${p.price}</p>
-
             <div className="actions">
               <button className="btn small" onClick={() => setEditing(p)}>
                 Edit
